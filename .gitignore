@@ -2,7 +2,8 @@ rmlmapper.jar
 kg.ttl
 notes
 attrattori.json
-TravelPugliaKG.ttl
-SM.ttl
+ApuliaTravelABox.ttl
+ApuliaTravelTBox.ttl
+ApuliaTravelKG.ttl
 attrattori.tsv
 utils.py

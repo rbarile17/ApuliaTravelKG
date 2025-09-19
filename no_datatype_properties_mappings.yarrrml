@@ -1,4 +1,5 @@
 prefixes:
+ ex: http://example.com/
  grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
  idlab-fn: https://w3id.org/imec/idlab/function#
  clv: https://w3id.org/italia/onto/CLV/
@@ -7,7 +8,7 @@ prefixes:
  ti: https://w3id.org/italia/onto/TI/
  poi: https://w3id.org/italia/onto/POI/
  l0: https://w3id.org/italia/onto/l0/
- td: https://apuliatravel.org/td/
+ td:  https://apuliatravel.org/td/
 mappings:
   geometry:
     sources:
@@ -20,10 +21,6 @@ mappings:
         - [grel:p_string_replace, "_"]
     po:
       - [a, clv:Geometry]
-      - [clv:lat, $(latitudine)]
-      - [clv:coordinate, $(latitudine)]
-      - [clv:long, $(longitudine)]
-      - [clv:coordinate, $(longitudine)]
       - p: sm:isGeometryFor
         o:
           mapping: poi
@@ -33,10 +30,6 @@ mappings:
     s: sm:Rating/$(cod_ranking)
     po:
       - [a, sm:Rating]
-      - p: sm:userRating
-        o:
-          value: $(cod_ranking)
-          datatype: xsd:int
   review:
     sources:
       - [attrattori.json~jsonpath, "$.[*]"]
@@ -66,7 +59,6 @@ mappings:
     s: sm:Telephone/$(tel_transf)
     po:
       - [a, sm:Telephone]
-      - [sm:telephoneNumber, $(tel_transf)]
       - p: sm:isTelephoneOf
         o:
           mapping: contactPoint
@@ -76,10 +68,6 @@ mappings:
     s: sm:Email/$(email)
     po:
       - [a, sm:Email]
-      - p: sm:emailAddress
-        o:
-          value: $(email)
-          datatype: xsd:anyURI
       - p: sm:isEmailOf
         o:
           mapping: contactPoint
@@ -89,7 +77,6 @@ mappings:
     s: clv:AddressArea/$(ambito_territoriale)
     po:
       - [a, clv:AddressArea]
-      - [l0:name, $(ambito_territoriale)]
   streetToponym:
     sources:
       - [attrattori.json~jsonpath, "$.[*]"]
@@ -101,14 +88,12 @@ mappings:
         - [grel:p_string_replace, "_"]
     po:
       - [a, clv:StreetToponym]
-      - [rdfs:label, $(indirizzo)]
   city:
     sources:
       - [attrattori.json~jsonpath, "$.[*]"]
     s: clv:City/$(comune)
     po:
       - [a, clv:City]
-      - [l0:name, $(comune)]
       - p: clv:hasHigherRank
         o:
           mapping: province
@@ -121,8 +106,6 @@ mappings:
     s: clv:Province/$(provincia)_province
     po:
       - [a, clv:Province]
-      - [clv:acronym, $(sigla_provincia)]
-      - [l0:name, $(provincia)]
       - p: clv:hasLowerRank
         o:
           mapping: city
@@ -137,10 +120,6 @@ mappings:
         - [grel:p_string_replace, "_"]
     po:
       - [a, clv:CivicNumbering]
-      - p: clv:streetNumber
-        o:
-          value: $(civico)
-          datatype: xsd:string
   address:
     sources:
       - [attrattori.json~jsonpath, "$.[*]"]
@@ -185,7 +164,6 @@ mappings:
       - p: clv:hasNumber
         o:
           mapping: streetNumber
-      - [clv:postCode, $(cap)]
   openingHoursMorning:
     sources:
       - [attrattori.json~jsonpath, "$.[*]"]
@@ -205,21 +183,6 @@ mappings:
               - [idlab-fn:str, $(orario_apertura_mattina)]
     po:
       - [a, clv:OpeningHoursSpecification]
-      - [a, clv:AccessCondition]
-      - p: clv:opens
-        o:
-          function: grel:string_substring
-          parameters:
-            - [grel:valueParameter, $(orario_apertura_mattina)]
-            - [grel:param_int_i_from, 0]
-            - [grel:param_int_i_opt_to, 5]
-      - p: clv:closes
-        o:
-          function: grel:string_substring
-          parameters:
-            - [grel:valueParameter, $(orario_apertura_mattina)]
-            - [grel:param_int_i_from, 8]
-            - [grel:param_int_i_opt_to, 13]
       - p: access-condition:isAccessConditionOf
         o:
           mapping: poi
@@ -305,21 +268,6 @@ mappings:
               - [idlab-fn:str, $(orario_apertura_pomeriggio)]
     po:
       - [a, clv:OpeningHoursSpecification]
-      - [a, clv:AccessCondition]
-      - p: clv:opens
-        o:
-          function: grel:string_substring
-          parameters:
-            - [grel:valueParameter, $(orario_apertura_pomeriggio)]
-            - [grel:param_int_i_from, 0]
-            - [grel:param_int_i_opt_to, 5]
-      - p: clv:closes
-        o:
-          function: grel:string_substring
-          parameters:
-            - [grel:valueParameter, $(orario_apertura_pomeriggio)]
-            - [grel:param_int_i_from, 8]
-            - [grel:param_int_i_opt_to, 13]
       - p: access-condition:isAccessConditionOf
         o:
           mapping: poi
@@ -421,7 +369,6 @@ mappings:
         - [grel:p_string_replace, "_"]
     po:
       - [a, sm:Review]
-      - [sm:reviewAspect, "Arte e Cultura"]
       - p: sm:hasRating
         o:
           value: sm:Rating/$(Arte e Cultura)
@@ -437,7 +384,6 @@ mappings:
         - [grel:p_string_replace, "_"]
     po:
       - [a, sm:Review]
-      - [sm:reviewAspect, "Enogastronomia"]
       - p: sm:hasRating
         o:
           value: sm:Rating/$(Enogastronomia)
@@ -453,7 +399,6 @@ mappings:
         - [grel:p_string_replace, "_"]
     po:
       - [a, sm:Review]
-      - [sm:reviewAspect, "Natura, Sport e Benessere"]
       - p: sm:hasRating
         o:
           value: sm:Rating/$(Natura, Sport e Benessere)
@@ -469,7 +414,6 @@ mappings:
         - [grel:p_string_replace, "_"]
     po:
       - [a, sm:Review]
-      - [sm:reviewAspect, "Teatro e Danza"]
       - p: sm:hasRating
         o:
           value: sm:Rating/$(Teatro e Danza)
@@ -485,7 +429,6 @@ mappings:
         - [grel:p_string_replace, "_"]
     po:
       - [a, sm:Review]
-      - [sm:reviewAspect, "Musica"]
       - p: sm:hasRating
         o:
           value: sm:Rating/$(Musica)
@@ -501,7 +444,6 @@ mappings:
         - [grel:p_string_replace, "_"]
     po:
       - [a, sm:Review]
-      - [sm:reviewAspect, "Cinema"]
       - p: sm:hasRating
         o:
           value: sm:Rating/$(Cinema)
@@ -517,7 +459,6 @@ mappings:
         - [grel:p_string_replace, "_"]
     po:
       - [a, sm:Review]
-      - [sm:reviewAspect, "Intrattenimento"]
       - p: sm:hasRating
         o:
           value: sm:Rating/$(Intrattenimento)
@@ -533,7 +474,6 @@ mappings:
         - [grel:p_string_replace, "_"]
     po:
       - [a, sm:Review]
-      - [sm:reviewAspect, "Tradizioni e Spiritualità"]
       - p: sm:hasRating
         o:
           value: sm:Rating/$(Tradizioni e Spiritualità)
@@ -549,7 +489,6 @@ mappings:
         - [grel:p_string_replace, "_"]
     po:
       - [a, sm:Review]
-      - [sm:reviewAspect, "Eventi"]
       - p: sm:hasRating
         o:
           value: sm:Rating/$(Meeting Incentive Congressi ed Eventi)
@@ -565,7 +504,6 @@ mappings:
         - [grel:p_string_replace, "_"]
     po:
       - [a, sm:Review]
-      - [sm:reviewAspect, "Mare"]
       - p: sm:hasRating
         o:
           value: sm:Rating/$(Mare)
@@ -841,8 +779,6 @@ mappings:
           parameters:
             - [grel:valueParameter, $(tipologia)]
             - [grel:valueParameter2, "PALAZZI_STORICI"]
-      - [rdfs:label, $(nm_attrattore_it), it~lang]
-      - [rdfs:label, $(nm_attrattore_en), en~lang]
       - p: clv:hasGeometry
         o:
           mapping: geometry

@@ -1,0 +1,8 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?entity  ?class
+WHERE {
+    ?entity a ?class .
+    FILTER(?class != <http://www.w3.org/2002/07/owl#NamedIndividual>)
+    FILTER(?class != <http://www.w3.org/2002/07/owl#Thing>)
+}
