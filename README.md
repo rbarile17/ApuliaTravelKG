@@ -1,6 +1,8 @@
 # TravelPugliaKG
 
-[Download](https://figshare.com/s/1bb1d7ffd51b66a654fa)
+[Download KG](https://figshare.com/s/1bb1d7ffd51b66a654fa)
+
+[Download experiment results](10.6084/m9.figshare.30375463)
 
 ## Consistency Check
 
