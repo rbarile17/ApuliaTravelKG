@@ -1,5 +1,7 @@
 # TravelPugliaKG
 
+Tabular data https://dati.puglia.it/ckan/dataset/luoghi-di-interesse-turistico-culturale-naturalistico-progressivo#
+
 [Download KG](https://figshare.com/s/1bb1d7ffd51b66a654fa)
 
 [Download experiment results](https://figshare.com/s/df0708b9fb1caf6b0ff3)
