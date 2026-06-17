@@ -4,7 +4,7 @@ Tabular data https://dati.puglia.it/ckan/dataset/luoghi-di-interesse-turistico-c
 
 OntoPiA ontologies: https://github.com/italia/dati-semantic-assets
 
-[Download KG](10.6084/m9.figshare.30168661)
+[Download KG](https://doi.org/10.6084/m9.figshare.30168661)
 
 Matey: https://rml.io/yarrrml/matey/#
 
