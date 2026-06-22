@@ -1,0 +1,15 @@
+kg_name;kge_model_name;lpx_config;eval_config
+ApuliaTravel;TransE;{"method": "kelpie", "mode": "necessary", "summarization": null};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
+ApuliaTravel;TransE;{"method": "kelpie", "mode": "necessary", "summarization": "simulation"};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
+ApuliaTravel;TransE;{"method": "kelpie", "mode": "necessary", "summarization": "bisimulation"};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
+ApuliaTravel;TransE;{"method": "dp", "mode": "necessary", "summarization": null};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
+ApuliaTravel;ComplEx;{"method": "kelpie", "mode": "necessary", "summarization": null};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
+ApuliaTravel;ComplEx;{"method": "kelpie", "mode": "necessary", "summarization": "simulation"};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
+ApuliaTravel;ComplEx;{"method": "kelpie", "mode": "necessary", "summarization": "bisimulation"};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
+ApuliaTravel;ComplEx;{"method": "dp", "mode": "necessary", "summarization": null};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
+ApuliaTravel;ComplEx;{"method": "criage", "mode": "necessary", "summarization": null};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
+ApuliaTravel;ConvE;{"method": "kelpie", "mode": "necessary", "summarization": null};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
+ApuliaTravel;ConvE;{"method": "kelpie", "mode": "necessary", "summarization": "simulation"};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
+ApuliaTravel;ConvE;{"method": "kelpie", "mode": "necessary", "summarization": "bisimulation"};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
+ApuliaTravel;ConvE;{"method": "dp", "mode": "necessary", "summarization": null};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
+ApuliaTravel;ConvE;{"method": "criage", "mode": "necessary", "summarization": null};{"prompting": "zero_shot", "llm_id": "Meta-Llama-3.1-70B-Instruct"}
