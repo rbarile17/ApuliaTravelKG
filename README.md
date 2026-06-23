@@ -6,6 +6,8 @@ OntoPiA ontologies: https://github.com/italia/dati-semantic-assets
 
 [Download KG](https://doi.org/10.6084/m9.figshare.30168661)
 
+[Download experiment results](https://doi.org/10.6084/m9.figshare.30375463)
+
 Matey: https://rml.io/yarrrml/matey/#
 
 RML mapper: https://github.com/RMLio/rmlmapper-java
